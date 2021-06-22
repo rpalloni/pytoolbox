@@ -20,6 +20,7 @@ list(zipped)
 fields = ['name', 'last_name', 'age', 'job']
 values = ['John', 'Doe', '32', 'Python Developer']
 a_dict = dict(zip(fields, values))
+a_dict
 
 values2 = [['John', 'Doe', '32', 'Python Developer'], ['Bob', 'Roi', '25', 'Java Developer']]
 dev_dict = [dict(zip(fields, sublist)) for sublist in values2]
@@ -58,6 +59,8 @@ letters = ['b', 'a', 'd', 'c']
 numbers = [2, 4, 3, 1]
 data1 = sorted(zip(letters, numbers)) # sort by letters
 data2 = sorted(zip(numbers, letters)) # sort by numbers
+data1
+data2
 
 # calculation in pairs
 total_sales = [52000.00, 51000.00, 48000.00]
