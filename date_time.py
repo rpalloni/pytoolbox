@@ -28,4 +28,4 @@ today.strftime("%Y-%m-%d")
 today.strftime("%d-%m-%Y")
 
 # django template date format [db: yyyy-mm-dd]
-#  <input type="date" class="form-control" placeholder="End year" name="session_end" value="{{ student.session_end|date:"Y-m-d" }}">
+#  <input type="date" class="form-control" name="year" value="{{ birthdate|date:"Y-m-d" }}">
