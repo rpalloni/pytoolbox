@@ -5,6 +5,7 @@ from psycopg2 import sql, connect
 try:
     with connect(
         host='localhost',
+        port='5432'
         database='books',
         user=input('Enter username: '), # user
         password=input('Enter password: '), # pwd
@@ -29,9 +30,8 @@ The ratings table connects the books table with the reviewers table.
 ################################ create schema ############################
 
 create_books_table_query = '''
-CREATE SEQUENCE books_id_seq;
 CREATE TABLE books(
-    id INTEGER NOT NULL DEFAULT nextval('books_id_seq') PRIMARY KEY,
+    id serial PRIMARY KEY,
     title VARCHAR(100),
     genre VARCHAR(100),
     release INTEGER
