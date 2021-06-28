@@ -25,7 +25,7 @@ class Order:
         self.cart = list(cart)
         self.customer = customer
 
-order = Order(['banana', 'apple', 'mango'], 'Roberto')
+order = Order(['banana', 'apple', 'mango'], 'Emma')
 len(order) # error!
 
 # You must override the corresponding special methods in the class definition:
@@ -39,7 +39,7 @@ class Order:
     def __len__(self):
         return len(self.cart) # instead of defining a get_cart_len()
 
-order = Order(['banana', 'apple', 'mango'], 'Roberto')
+order = Order(['banana', 'apple', 'mango'], 'Mark')
 len(order)
 order.__len__()
 
@@ -81,8 +81,8 @@ class Order:
     def __bool__(self):
         return len(self.cart) > 0
 
-order1 = Order(['banana', 'apple', 'mango'], 'Real Python')
-order2 = Order([], 'Python')
+order1 = Order(['banana', 'apple', 'mango'], 'Mark')
+order2 = Order([], 'Daniel')
 
 bool(order1)
 bool(order2)
@@ -110,7 +110,7 @@ class Order:
         new_cart.append(other)
         return Order(new_cart, self.customer)
 
-order = Order(['banana', 'apple'], 'Roberto')
+order = Order(['banana', 'apple'], 'Mark')
 (order + 'orange').cart
 order.cart # no addition
 order.customer
@@ -128,7 +128,7 @@ class Order:
         self.cart.append(other)
         return self
 
-order = Order(['banana', 'apple'], 'Roberto')
+order = Order(['banana', 'apple'], 'John')
 order += 'mango'
 order.cart
 
@@ -142,7 +142,7 @@ class Order:
     def __getitem__(self, key): # key: integer | string | slice obj
         return self.cart[key]
 
-order = Order(['banana', 'apple', 'orange', 'mango'], 'Roberto')
+order = Order(['banana', 'apple', 'orange', 'mango'], 'Joe')
 order[0]
 order[-1]
 order[2:]
