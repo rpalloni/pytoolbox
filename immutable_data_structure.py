@@ -98,3 +98,4 @@ scientists
 
 list(map(lambda x: x['affiliation']['university'], [scientist for scientist in scientists]))
 
+list(map(lambda x: x['nobel']['country'], [scientist for scientist in scientists]))
