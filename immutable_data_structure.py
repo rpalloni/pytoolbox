@@ -24,7 +24,6 @@ point._asdict()
 point.x = 100
 
 
-
 #| Name            | Field      | Born | Nobel Prize? |
 #|-----------------|------------|------|--------------|
 #| Ada Lovelace    | math       | 1815 | no           |
