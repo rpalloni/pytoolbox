@@ -35,7 +35,7 @@ def filter_is_odd(x):
 list(filter(filter_is_odd, numbers))
 [x for x in numbers if filter_is_odd(x)]
 
-# sort: sort() >> sorted() https://realpython.com/python-sort/
+# sort: sort() >> sorted()
 sorted(['cat', 'dog', 'cheetah', 'rhino', 'bear'], reverse=True)
 
 animals = [
@@ -66,7 +66,7 @@ def get_unique_words():
     return words
 get_unique_words()
 
-# memory saving: list[] >> generators() https://realpython.com/introduction-to-python-generators/
+# memory saving: list[] >> generators()
 # out of memory
 sum([i * i for i in range(1, 10000001)])
 
