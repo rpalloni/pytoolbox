@@ -51,3 +51,23 @@ def external(x):
     internal()
 
 external(5)
+
+
+# closure
+def add(x, y):
+    # do_add is a closure
+    def do_add():
+        print('Adding', x, y)
+        return x + y
+    return do_add
+
+
+def generate_power(number):
+    def nth_power(power):
+        return number ** power
+    return nth_power
+
+raise_two = generate_power(2) # generate_power returns a function
+raise_three = generate_power(3)
+
+raise_two(2)
