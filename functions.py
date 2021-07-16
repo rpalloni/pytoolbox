@@ -35,3 +35,19 @@ cheeseshop("Limburger",
            shopkeeper="Michael Palin",
            client="John Cleese",
            sketch="Cheese Shop Sketch")
+
+# nested functions
+def outer(x,y):
+    def inner(a,b):
+        return (a + b)
+    print(inner(x,y))
+
+outer(3, 6)
+
+def external(x):
+    y = 20
+    def internal():
+        print(x + y)
+    internal()
+
+external(5)
