@@ -71,3 +71,13 @@ raise_two = generate_power(2) # generate_power returns a function
 raise_three = generate_power(3)
 
 raise_two(2)
+
+# function as parameter of another function
+def sum_num(a, b):
+    print(a + b)
+
+def handler(f,x,y):
+    f(x,y)
+
+handler(sum_num, 4, 5)
+
