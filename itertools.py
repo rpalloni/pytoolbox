@@ -56,7 +56,14 @@ list(forbidden)
 import datetime
 import more_itertools
 
-dates = [datetime.datetime(2020, 1, 15),datetime.datetime(2020, 1, 16),datetime.datetime(2020, 1, 17),datetime.datetime(2020, 2, 1),datetime.datetime(2020, 2, 2),datetime.datetime(2020, 2, 4)]
+dates = [
+    datetime.datetime(2020, 1, 15),
+    datetime.datetime(2020, 1, 16),
+    datetime.datetime(2020, 1, 17),
+    datetime.datetime(2020, 2, 1),
+    datetime.datetime(2020, 2, 2),
+    datetime.datetime(2020, 2, 4)
+    ]
 
 ordinal_dates = []
 for d in dates:
@@ -147,13 +154,14 @@ John           |               |  1994         |   45000
 Ben            |               |  1985         |   93000
 Andy           |               |  2000         |   56000
 Mary           |               |  1998         |   73000
+Carl           |               |  1992         |   75000
 '''
 
 from more_itertools import sort_together
 cols = [
-    ('John', 'Ben', 'Andy', 'Mary'),
-    ('1994', '1985', '2000', '1998'),
-    ('45000', '93000', '56000', '73000')
+    ('John', 'Ben', 'Andy', 'Mary', 'Carl'),
+    ('1994', '1985', '2000', '1998', '1992'),
+    ('45000', '93000', '56000', '73000', '75000')
 ]
 
 sort_together(cols, key_list=(1, 2))
