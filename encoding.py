@@ -1,5 +1,6 @@
 
 # encoding: translating characters (letters, punctuation, symbols, whitespace and control characters) to integers and than to bits
+
 '''                                                             ASCII table
 
 Symbol/Character                 Dec       Byte        S/C   Dec      Byte       S/C   Dec      Byte        S/C          Dec      Byte

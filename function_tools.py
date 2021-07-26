@@ -105,7 +105,7 @@ class Cell(object):
         self._alive = bool(state)
 
     set_alive = partialmethod(set_state, True) # avoid def set_alive:
-    set_dead = partialmethod(set_state, False) # avoid # def set_dead:
+    set_dead = partialmethod(set_state, False) # avoid def set_dead:
 
 c = Cell()
 c.set_alive()
