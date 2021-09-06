@@ -98,7 +98,7 @@ print(zero_euclid(point))
 # define methods without reimplementation
 from functools import partialmethod
 
-class Cell(object):
+class Cell:
     def __init__(self):
         self._alive = False
 
