@@ -2,6 +2,7 @@
 # transform a method of a class into a property whose value is computed once and then cached as a normal attribute
 # similar to the built-in @property decorator, with the addition of caching
 from functools import cached_property
+import statistics
 
 class DataSet:
     def __init__(self, sequence_of_numbers):
@@ -14,6 +15,10 @@ class DataSet:
     @cached_property
     def variance(self):
         return statistics.variance(self._data)
+    
+dataset = DataSet([1, 2, 3, 4, 5, 6])
+dataset.variance
+dataset.stdev
 
 
 # lru_cache()
