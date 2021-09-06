@@ -1,2 +1,2 @@
 # pytoolbox
-A collection of py utils
+A collection of py libs and utils
