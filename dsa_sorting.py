@@ -76,3 +76,35 @@ a = [8, 2, 6, 5, 4]
 start_time = time.time()
 insertion_sort(a)
 time.time() - start_time
+
+
+### Merge Sort Algorithm (2 steps)
+def merge(left, right):
+
+    result = []
+    index_left = index_right = 0
+
+    while len(result) < len(left) + len(right):
+
+        # sort the elements in the result array comparing 
+        # pairs of values in the two arrays
+
+        if left[index_left] <= right[index_right]:
+            result.append(left[index_left])
+            index_left += 1
+        else:
+            result.append(right[index_right])
+            index_right += 1
+
+        # when end of either array is reached,remaining elements
+        # are added from the other array to the result and break
+
+        if index_right == len(right):
+            result += left[index_left:]
+            break
+
+        if index_left == len(left):
+            result += right[index_right:]
+            break
+
+    return result
