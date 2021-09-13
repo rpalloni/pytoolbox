@@ -108,3 +108,26 @@ def merge(left, right):
             break
 
     return result
+
+
+def merge_sort(array):
+
+    if len(array) < 2:
+        return array
+
+    midpoint = len(array) // 2 # len(a) => 5 // 2 => 2
+
+    # splitting recursively  the input into two equal halves,
+    # sorting each half and merging them together into the final result
+
+    left=merge_sort(array[:midpoint])
+    right=merge_sort(array[midpoint:])
+
+    return merge(left, right)
+
+
+a = [8, 2, 6, 5, 4]
+
+start_time = time.time()
+merge_sort(a)
+time.time() - start_time
