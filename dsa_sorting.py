@@ -133,7 +133,7 @@ merge_sort(a)
 time.time() - start_time
 
 
-# Quick Sort Algorithm
+### Quick Sort Algorithm
 from random import randint
 
 def quick_sort(array):
