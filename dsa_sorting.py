@@ -131,3 +131,35 @@ a = [8, 2, 6, 5, 4]
 start_time = time.time()
 merge_sort(a)
 time.time() - start_time
+
+
+# Quick Sort Algorithm
+from random import randint
+
+def quick_sort(array):
+
+    if len(array) < 2:
+        return array
+
+    low, same, high = [], [], []
+
+    # select pivot element randomly
+    pivot = array[randint(0, len(array) - 1)]
+
+    for item in array:
+        # assign elements to each list
+        if item < pivot:
+            low.append(item)
+        elif item == pivot:
+            same.append(item)
+        elif item > pivot:
+            high.append(item)
+
+    # combine lists
+    return quick_sort(low) + same + quick_sort(high)
+
+a = [8, 2, 6, 5, 4]
+
+start_time = time.time()
+quick_sort(a)
+time.time() - start_time
