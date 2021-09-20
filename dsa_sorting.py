@@ -141,7 +141,7 @@ def quick_sort(array):
     if len(array) < 2:
         return array
 
-    low, same, high = [], [], []
+    low, same, high = [], [], [] # split in lists
 
     # select pivot element randomly
     pivot = array[randint(0, len(array) - 1)]
@@ -155,7 +155,7 @@ def quick_sort(array):
         elif item > pivot:
             high.append(item)
 
-    # combine lists
+    # combine lists recursively
     return quick_sort(low) + same + quick_sort(high)
 
 a = [8, 2, 6, 5, 4]
