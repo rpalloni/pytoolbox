@@ -18,7 +18,7 @@ def get_cost(orders):
 
 
 
-def main() -> None:
+def main():
     # iterables of order objects
     dinner = [Order('Pizza', 20.5), Order('Beer', 9.8), Order('Beer', 9.8)]
     breakfast = [Order('Pancakes', 11.3), Order('Bacon', 4), Order('Coffee', 3.6), Order('Coffee', 3.6)]
