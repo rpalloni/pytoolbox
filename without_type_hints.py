@@ -8,6 +8,7 @@ Order = namedtuple('Order', 'item, price')
 
 
 def get_cost(orders):
+    ''' no input/output type hints '''
     total = 0
 
     for o in orders:
@@ -16,14 +17,16 @@ def get_cost(orders):
     return total
 
 
-def main() -> None:
 
+def main() -> None:
+    # iterables of order objects
     dinner = [Order('Pizza', 20.5), Order('Beer', 9.8), Order('Beer', 9.8)]
     breakfast = [Order('Pancakes', 11.3), Order('Bacon', 4), Order('Coffee', 3.6), Order('Coffee', 3.6)]
 
     print(f"Dinner cost EUR {get_cost(dinner):,.02f}")
-
     print(f"Breakfast cost EUR {get_cost(breakfast):,.02f}")
 
+    
+    
 if __name__ == '__main__':
     main()
