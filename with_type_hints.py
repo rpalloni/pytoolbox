@@ -8,7 +8,7 @@ Order = namedtuple('Order', 'item, price')
 
 
 def get_cost(orders: Iterable[Order]) -> float:
-  ''' type hints: function gets an iterable of order objects and returns a float '''
+  ''' type hints: function gets an iterable of type Order and returns a float '''
     total = 0
 
     for o in orders:
