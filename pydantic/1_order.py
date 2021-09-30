@@ -2,9 +2,9 @@ import datetime
 from typing import List
 
 order_json = {
-    'item_id': '123',
+    'item_id': '123',                   # str
     'dt_created': '2018-09-30 12:20',
-    'page_visited': [1, 2, '3'], # watch out!
+    'page_visited': [1, 2, '3'],        # mix
     'price': 17.22
 }
 
