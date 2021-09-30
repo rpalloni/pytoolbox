@@ -3,9 +3,9 @@ from dataclasses import dataclass
 from typing import List, Optional
 
 order_json = {
-    'item_id': '123',
+    'item_id': '123',                   # str
     'dt_created': '2018-09-30 12:20',
-    'page_visited': [1, 2, '3'],
+    'page_visited': [1, 2, '3'],        # mix
     'price': 17.22
 }
 
@@ -33,4 +33,5 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 
+# data silently accepted despite class attribute definition
 # Order(item_id='123', dt_created='2018-09-30 12:20', page_visited=[1, 2, '3'], price=17.22)
