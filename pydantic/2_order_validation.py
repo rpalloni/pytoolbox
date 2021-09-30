@@ -4,9 +4,9 @@ from typing import List
 from dateutil.parser import parse
 
 order_json = {
-    'item_id': '123', # try 'xyz'
+    'item_id': '123',                   # try 'xyz'
     'dt_created': '2018-09-30 12:20',
-    'page_visited': [1, 2, '3'], # watch out!
+    'page_visited': [1, 2, '3'],        # mix
     'price': 17.22
 }
 
