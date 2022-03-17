@@ -20,16 +20,16 @@ datetime.combine(today, current_time)
 # ISO: all dates should be written in order of most-to-least-significant data YYYY-MM-DD HH:MM:SS
 date.fromisoformat("2020-01-31")
 
-date_string = "01-31-2020 14:45:30"
-format_string = "%m-%d-%Y %H:%M:%S"
+date_string = '01-31-2020 14:45:30'
+format_string = '%m-%d-%Y %H:%M:%S'
 datetime.strptime(date_string, format_string)
 
-date_string = "01-31-2020 14:45:30"
-format_string = "%d-%m-%Y%H:%M:%S"
+date_string = '01-31-2020 14:45:30'
+format_string = '%d-%m-%Y%H:%M:%S'
 datetime.strptime(date_string, format_string)
 
-today.strftime("%Y-%m-%d")
-today.strftime("%d-%m-%Y")
+today.strftime('%Y-%m-%d')
+today.strftime('%d-%m-%Y')
 
 # django template date format [db: yyyy-mm-dd]
 #  <input type="date" class="form-control" name="year" value="{{ birthdate|date:"Y-m-d" }}">
