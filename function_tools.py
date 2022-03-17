@@ -29,13 +29,13 @@ import requests
 
 @lru_cache(maxsize=32)
 def get_pep(number: int) -> str:
-    resource = f"http://www.python.org/dev/peps/pep-{number:04d}/"
+    resource = f'http://www.python.org/dev/peps/pep-{number:04d}/'
     print(resource)
     try:
         with requests.get(resource) as s:
             return s.text
     except requests.HTTPError:
-        return "Not Found"
+        return 'Not Found'
 
 
 list_of_peps = [8, 290, 308, 320, 8, 218, 320, 279, 289, 320, 9991]
@@ -72,8 +72,8 @@ class Pythonista:
         return ((self.lastname.lower(), self.firstname.lower()) <
                 (other.lastname.lower(), other.firstname.lower()))
 
-guido = Pythonista("Guido", "van Rossum")
-brett = Pythonista("Brett", "Cannon")
+guido = Pythonista('Guido', 'van Rossum')
+brett = Pythonista('Brett', 'Cannon')
 print(guido > brett)
 
 
@@ -151,7 +151,7 @@ def strtype(a: str, b: str):
 
 print(mul(1, 2))
 print(mul(1.5, 2.5))
-print(mul("1", "2"))
+print(mul('1', '2'))
 print(mul(1, 1.0))
 
 
@@ -162,7 +162,7 @@ from functools import singledispatchmethod
 class Negator:
     @singledispatchmethod
     def neg(self, arg):
-        raise NotImplementedError("Cannot negate!!")
+        raise NotImplementedError('Cannot negate!!')
 
     @neg.register
     def neg_int(self, arg: int):
@@ -176,7 +176,7 @@ class Negator:
 neg = Negator()
 print(neg.neg(5))
 print(neg.neg(True))
-print(neg.neg("Hello"))
+print(neg.neg('Hello'))
 
 # update_wrapper()
 # wraps()
@@ -185,7 +185,7 @@ print(neg.neg("Hello"))
 def show_args(f):
     '''docs decorator'''
     def wrapper(*args, **kwargs):
-        print(f"Calling function {f.__name__} with {args} and {kwargs}")
+        print(f'Calling function {f.__name__} with {args} and {kwargs}')
         return f(*args, **kwargs)
     return wrapper
 
@@ -202,7 +202,7 @@ print(add.__name__)
 def show_args(f):
     @wraps(f)
     def wrapper(*args, **kwargs):
-        print(f"Calling function {f.__name__} with {args} and {kwargs}")
+        print(f'Calling function {f.__name__} with {args} and {kwargs}')
         return f(*args, **kwargs)
     return wrapper
 
