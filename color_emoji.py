@@ -3,8 +3,8 @@ import emoji
 print(emoji.emojize('Python is :thumbs_up:'))
 print(emoji.emojize('Python is :thumbsup:', use_aliases=True))
 print(emoji.demojize('Python is 👍'))
-print(emoji.emojize("Python is fun :red_heart:"))
-print(emoji.emojize("Python is fun :red_heart:",variant="emoji_type"))
+print(emoji.emojize('Python is fun :red_heart:'))
+print(emoji.emojize('Python is fun :red_heart:',variant='emoji_type'))
 
 
 # ASCII color codes
@@ -75,10 +75,10 @@ def print_with_color(message, color='red'):
     print(COLOR.get(color) + message + COLOR.get('default'))
 
 def print_with_format_b(message):
-    print(f"{format.BOLD}" + message + f"{format.OFF}")
+    print(f'{format.BOLD}' + message + f'{format.OFF}')
 
 def print_with_format_u(message):
-    print(f"{format.UNDERLINE}" + message + f"{format.OFF}")
+    print(f'{format.UNDERLINE}' + message + f'{format.OFF}')
 
 '''
 print_with_color('hello colorful world!')
