@@ -64,7 +64,7 @@ str(b'clich\xc3\xa9', 'utf-8')
 
 def make_bit_seq(s):
     if not str(s).isascii():
-        raise ValueError("ASCII only allowed")
+        raise ValueError('ASCII only allowed')
     return " ".join(f"{ord(i):08b}" for i in str(s))
 
 make_bit_seq('a')
@@ -133,13 +133,13 @@ b'\xcf\x84o\xcf\x81\xce\xbdo\xcf\x82'.decode('utf-8')
 characters = b'\x63\x6c\x69\x63\x68\xe9' # b defines a bytes string
 str(characters)
 print(characters)
-print(characters.decode("latin-1"))
+print(characters.decode('latin-1'))
 
-characters = "cliché"
-print(characters.encode("UTF-8"))
-print(characters.encode("latin-1"))
-print(characters.encode("CP437"))
-print(characters.encode("ascii"))
+characters = 'cliché'
+print(characters.encode('UTF-8'))
+print(characters.encode('latin-1'))
+print(characters.encode('CP437'))
+print(characters.encode('ascii'))
 
 # Unicode string
 b'\u48\u65\u6c\u6c\u6f\u20\u57\u6f\u72\u6c\u64\u21'.decode('unicode_escape') # error!
