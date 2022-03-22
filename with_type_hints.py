@@ -8,7 +8,7 @@ Order = namedtuple('Order', 'item, price')
 
 
 def get_cost(orders: Iterable[Order]) -> float:
-  ''' type hints: function gets an iterable of type Order and returns a float '''
+    ''' type hints: function gets an iterable of type Order and returns a float '''
     total = 0
 
     for o in orders:
@@ -17,7 +17,7 @@ def get_cost(orders: Iterable[Order]) -> float:
     return total
 
 
-  
+
 def main() -> None:
     # iterables of order objects
     dinner = [Order('Pizza', 20.5), Order('Beer', 9.8), Order('Beer', 9.8)]
@@ -26,7 +26,7 @@ def main() -> None:
     print(f"Dinner cost EUR {get_cost(dinner):,.02f}")
     print(f"Breakfast cost EUR {get_cost(breakfast):,.02f}")
 
-    
+
 
 if __name__ == '__main__':
     main()

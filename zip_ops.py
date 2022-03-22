@@ -5,6 +5,7 @@ letters = ['a', 'b', 'c'] # iterable
 zipped = zip(numbers, letters) # iterator
 type(zipped)
 list(zipped)
+next(zipped)
 
 s1 = {2, 3, 1}
 s2 = {'b', 'a', 'c'}
@@ -13,8 +14,12 @@ list(zip(s1, s2))
 integers = [1, 2, 3]
 letters = ['a', 'b', 'c']
 floats = [4.0, 5.0, 6.0]
-zipped = zip(integers, letters, floats)  # Three input iterables
+zipped = zip(integers, letters, floats)  # three input iterables
 list(zipped)
+
+l1 = [2, 3, 1]
+d1 = {'b', 'a', 'c'}
+list(zip(l1, d1)) # iterables mix
 
 # build dict
 fields = ['name', 'last_name', 'age', 'job']
@@ -25,7 +30,7 @@ a_dict
 values2 = [['John', 'Doe', '32', 'Python Developer'], ['Bob', 'Roi', '25', 'Java Developer']]
 dev_dict = [dict(zip(fields, sublist)) for sublist in values2]
 dev_dict
-list(map(lambda x : dict(zip(fields, x)), values2))
+list(map(lambda x: dict(zip(fields, x)), values2))
 
 list(zip(range(5), range(100))) # unequal lenght: shortest rule
 

@@ -5,7 +5,7 @@ from psycopg2 import sql, connect
 try:
     with connect(
         host='localhost',
-        port='5432'
+        port='5432',
         database='books',
         user=input('Enter username: '), # user
         password=input('Enter password: '), # pwd
