@@ -32,6 +32,10 @@ dev_dict = [dict(zip(fields, sublist)) for sublist in values2]
 dev_dict
 list(map(lambda x: dict(zip(fields, x)), values2))
 
+weather = ['Thunder', 'Sleet', 'Hail', 'Dust', 'Smoke', 'Blowing_Snow', 'Rain', 'Snow', 'Glaze', 'Fog']
+dummy = ['0010000000', '0000000001']
+list(map(lambda x: dict(zip(weather, x)), dummy))
+
 list(zip(range(5), range(100))) # unequal lenght: shortest rule
 
 from itertools import zip_longest
