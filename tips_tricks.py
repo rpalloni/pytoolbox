@@ -116,7 +116,7 @@ string.printable
 string.whitespace
 
 def is_upper(word):
-     for letter in word:
+    for letter in word:
          if letter not in string.ascii_uppercase:
              return False
      return True
@@ -127,7 +127,7 @@ is_upper('LOL')
 True
 
 import itertools
-friends = ['Monique', 'Ashish', 'Devon', 'Bernie']
+friends = ['Monique', 'Ashim', 'Devon', 'Bernie']
 # list of every possible grouping of input values with two elements
 # with permutations, the order of the elements matters
 list(itertools.permutations(friends, r=2))
