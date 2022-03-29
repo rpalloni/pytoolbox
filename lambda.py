@@ -83,13 +83,13 @@ list(map(lambda x: float(x['data']['temperature']), [d for d in dhtdata]))
 
 def fruit_selector(fruit):
     fruits = {
-        "apple": "The fruit is apple",
-        "banana": "The fruit is banana",
-        "blueberries": "The fruit is berries",
-        "raspberries": "The fruit is berries",
-        "blue currant": "The fruit is berries",
-        "currant": "The fruit is berries",
-        "default": "The fruit is unknown"
+        'apple': 'The fruit is apple',
+        'banana': 'The fruit is banana',
+        'blueberries': 'The fruit is berries',
+        'raspberries': 'The fruit is berries',
+        'blue currant': 'The fruit is berries',
+        'currant': 'The fruit is berries',
+        'default': 'The fruit is unknown'
     }
     return dict(filter(lambda key: fruit in key[0], fruits.items()))
 
