@@ -27,7 +27,7 @@ def main() -> None:
     print(o)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
 
 # {'item_id': '123', 'dt_created': '2018-09-30 12:20', 'page_visited': [1, 2, '3'], 'price': 17.22}

@@ -30,7 +30,7 @@ def main() -> None:
     print(o)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
 
 # data silently accepted despite class attribute definition
