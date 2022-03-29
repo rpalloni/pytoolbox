@@ -1,9 +1,10 @@
 '''
-Generator functions are a special kind of function that return a lazy iterator.
-Iterator is an object that you can loop over like a list.
+Generator functions are a special kind of function that return a lazy iterator:
+Iterator is an object returning items one-by-one instead of all at once (like a list)
+and the generator function is paused until the next item is requested.
 However, unlike lists, lazy iterators do not store their contents in memory.
 -> List: fast but heavy
--> Genrators: slow but light
+-> Generators: slow but light
 '''
 
 import sys
@@ -41,7 +42,7 @@ In contrast, return stops function execution completely.
 When a function is suspended, the state of that function is saved.
 This includes any variable bindings local to the generator,
 the instruction pointer, the internal stack, and any exception handling.
-next() resume function execution where it was yielded
+next() resumes function execution where it was yielded.
 '''
 
 def cmap(funcs, arr):
@@ -55,6 +56,6 @@ funcs = [lambda x: x*x, lambda x: x+x]
 arr = [1, 2, 3, 4]
 
 result = cmap(funcs, arr)
-#result
+#print(result)
 next(result)
 next(result)
