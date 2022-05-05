@@ -1,40 +1,43 @@
 # Lambda: Anonymous Functions (unnamed) no def of a function > no name
 
 # lambda <==> def
-def add(x,y):
+def add(x, y):
     return x+y
 add(2, 3)
 
 # f = lambda argument(s) : expression
-add = lambda x, y : x + y
+def add(x, y): return x + y
 add(2, 3)
 
 (lambda x, y: x + y)(2, 3) # Immediately Invoked Function Expression
 
-(lambda x:(x % 2 and 'odd' or 'even'))(3)
+(lambda x: (x % 2 and 'odd' or 'even'))(3)
 
-full_name = lambda first, last: f'Full name: {first.title()} {last.title()}'
+arr = [1, 2, 3, 4, 5]
+list(filter(lambda x: x % 2 == 0, arr)) # modulus: reminder of division
+
+def full_name(first, last): return f'Full name: {first.title()} {last.title()}'
 full_name('roberto', 'palloni')
 
 # https://realpython.com/python-lambda/#map
-list(map(lambda x : x*2, [1, 2, 3, 4])) # map(function_object, iterable1, iterable2,...)
+list(map(lambda x: x*2, [1, 2, 3, 4])) # map(function_object, iterable1, iterable2,...)
 
 list(map(lambda x: x.upper(), ['cat', 'dog', 'cow']))
 
 fields = ['name', 'last_name', 'age', 'job']
 records = [['John', 'Doe', '45', 'Python Developer'], ['Bob', 'Roi', '25', 'Java Developer']]
-list(map(lambda x : dict(zip(fields, x)), records))
+list(map(lambda x: dict(zip(fields, x)), records))
 
 # https://realpython.com/python-lambda/#filter
-list(filter(lambda x : x % 2 == 0, [1, 2, 3, 4, 5, 6])) # filter(function_object, iterable)
+list(filter(lambda x: x % 2 == 0, [1, 2, 3, 4, 5, 6])) # filter(function_object, iterable)
 
-fruit = {'apple' : 5, 'pear' : 3, 'banana' : 4, 'pineapple' : 1, 'cherry' : 20, 'orange' : 15, 'watermelon' : 10, 'lemon' : 25}
-s = filter(lambda x: x<=3, fruit.values())
+fruit = {'apple': 5, 'pear': 3, 'banana': 4, 'pineapple': 1, 'cherry': 20, 'orange': 15, 'watermelon': 10, 'lemon': 25}
+s = filter(lambda x: x <= 3, fruit.values())
 next(s)
 next(s)
 
 dct = [{'name': 'python', 'points': 10}, {'name': 'java', 'points': 8}]
-list(filter(lambda x : x['name'] == 'python', dct))
+list(filter(lambda x: x['name'] == 'python', dct))
 
 # https://realpython.com/python-lambda/#reduce
 from functools import reduce
@@ -66,7 +69,6 @@ portfolio.sort(key=lambda s: s['name']) # unnamed (lambda) callback
 portfolio
 
 
-
 dhtdata = [
     {'id': 1, 'time': '2020-10-20 09:30', 'data': {'temperature': '19.00', 'humidity': '61.50', 'hic': '18.56'}},
     {'id': 2, 'time': '2020-10-21 09:30', 'data': {'temperature': '18.00', 'humidity': '60.40', 'hic': '18.53'}},
@@ -78,7 +80,6 @@ dhtdata[0]['data']['temperature']
 [d['time'] for d in dhtdata]
 [d['data']['temperature'] for d in dhtdata]
 list(map(lambda x: float(x['data']['temperature']), [d for d in dhtdata]))
-
 
 
 def fruit_selector(fruit):
