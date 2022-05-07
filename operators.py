@@ -52,3 +52,7 @@ for index, value in enumerate(names, 1):
     print(f'{index}: {value}')
 
 list(enumerate(names))
+
+# reverse
+arr5 =  [1, 2, 3, 4, 5]
+list(reversed(arr5))
