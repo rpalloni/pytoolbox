@@ -34,6 +34,11 @@ print(x % y) # reminder
 res, rem = divmod(x, y)
 print(f'result:{res}, reminder:{rem}')
 
+# pop: get and remove
+arr4 = [5, 3, 6, 2, 10]
+arr4.pop(2) # get element by index
+arr4        # removed in arr
+
 # enumerate
 for index, i in enumerate('pippo'):
     print(index, i)
