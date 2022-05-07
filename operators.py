@@ -1,4 +1,7 @@
 # unpacking operator
+a = [8, 2, 6, 5, 4]
+[*range(len(a))]
+
 arr1 = range(10)
 print(arr1)
 [*arr1]
@@ -30,3 +33,17 @@ print(x/y)
 print(x % y) # reminder
 res, rem = divmod(x, y)
 print(f'result:{res}, reminder:{rem}')
+
+# enumerate
+for index, i in enumerate('pippo'):
+    print(index, i)
+
+names = ['Bob', 'Alice', 'Guido']
+for index, value in enumerate(names):
+    print(f'{index}: {value}')
+
+names = ['Bob', 'Alice', 'Guido']
+for index, value in enumerate(names, 1):
+    print(f'{index}: {value}')
+
+list(enumerate(names))
