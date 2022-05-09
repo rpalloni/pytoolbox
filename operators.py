@@ -15,6 +15,7 @@ print(*arr2)
 # slice [index] and range slice [start:stop:step] operators
 arr3 = [1, 2, 3, 4, 5, 6]
 arr3[2] # index starts at 0
+arr3[-1] # last
 arr3[1:3] # take items 2-3, upper bound noninclusive
 arr3[0:-1] # take all but the last
 arr3[::2]
