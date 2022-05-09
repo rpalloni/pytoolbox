@@ -53,6 +53,12 @@ for index, value in enumerate(names, 1):
 
 list(enumerate(names))
 
-# reverse
+# reverse and sorted
 arr5 = [1, 2, 3, 4, 5]
 list(reversed(arr5))
+
+arr6 = [7, 4, 2, 9, 5]
+sorted(arr6)
+
+words = ['banana', 'pie', 'Washington', 'book']
+sorted(words, key=len)
