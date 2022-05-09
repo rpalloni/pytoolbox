@@ -54,5 +54,5 @@ for index, value in enumerate(names, 1):
 list(enumerate(names))
 
 # reverse
-arr5 =  [1, 2, 3, 4, 5]
+arr5 = [1, 2, 3, 4, 5]
 list(reversed(arr5))
