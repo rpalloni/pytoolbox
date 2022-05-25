@@ -18,6 +18,8 @@ arr3[2] # index starts at 0
 arr3[-1] # last
 arr3[1:3] # take items 2-3, upper bound noninclusive
 arr3[0:-1] # take all but the last
+arr3[0:-4]
+arr3[-5:-2]
 arr3[::2]
 arr3[::-1]
 
