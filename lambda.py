@@ -16,13 +16,19 @@ add(2, 3)
 arr = [1, 2, 3, 4, 5]
 list(filter(lambda x: x % 2 == 0, arr)) # modulus: reminder of division
 
-def full_name(first, last): return f'Full name: {first.title()} {last.title()}'
-full_name('roberto', 'palloni')
+def full_name(first, last): 
+    return f'Full name: {first.title()} {last.title()}'
+full_name('john', 'foo')
+
+(lambda first, last: print(f'Full name: {first} {last}'))('john', 'foo')
 
 # https://realpython.com/python-lambda/#map
 list(map(lambda x: x*2, [1, 2, 3, 4])) # map(function_object, iterable1, iterable2,...)
 
 list(map(lambda x: x.upper(), ['cat', 'dog', 'cow']))
+
+arr = [(1, 'd'), (2, 'b'), (4, 'c'), (3, 'a')]
+list(map(lambda x: x[1], arr))
 
 fields = ['name', 'last_name', 'age', 'job']
 records = [['John', 'Doe', '45', 'Python Developer'], ['Bob', 'Roi', '25', 'Java Developer']]

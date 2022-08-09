@@ -65,3 +65,6 @@ sorted(arr6)
 
 words = ['banana', 'pie', 'Washington', 'book']
 sorted(words, key=len)
+
+tups = [(1, 'd'), (2, 'b'), (4, 'c'), (3, 'c')]
+sorted(tups, key=lambda x:x[1])
