@@ -51,6 +51,21 @@ def calc_square(n):
 calc_square(3)
 
 
+def trace(wrapped):
+    def wrapper(*args, **kwargs):
+        print(f'TRACE: calling {wrapped.__name__}() with {args}, {kwargs}')
+        original_result = wrapped(*args, **kwargs)
+        print(f'TRACE: {wrapped.__name__}() returned {original_result!r}')
+        return original_result
+    return wrapper
+
+@trace
+def write(name, text):
+    return f'{name}: {text}'
+
+write('Foo', 'Hello World')
+
+
 # editor
 def uppercase(wrapped):
     def wrapper():
