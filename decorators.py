@@ -1,6 +1,10 @@
 # decorators allows to temporary extend and modify the behavior of a callable (function, method, class)
 # often are generic functionality wrapped around a function (e.g. timing, logging, access control, etc)
 
+# decorator: container function
+# wrapped: input function to decorate
+# wrapper: closure decorating the input
+
 import time
 
 # timing decorator
@@ -33,10 +37,10 @@ calc_cube(array)
 
 
 # logging decorator
-def star_decorator(f):
+def star_decorator(wrapped):
     def wrapper(*args, **kwargs):
         print('*'*10 + 'START' + '*'*10)
-        f(*args, **kwargs)
+        wrapped(*args, **kwargs)
         print('*'*10 + 'END' + '*'*10)
     return wrapper
 
@@ -45,3 +49,37 @@ def calc_square(n):
     print(n * n)
 
 calc_square(3)
+
+
+# editor
+def uppercase(wrapped):
+    def wrapper():
+        original_result = wrapped()
+        modified_result = original_result.upper()
+        return modified_result
+    return wrapper
+
+@uppercase
+def greet():
+    return 'Hello!'
+
+greet()
+
+
+# multiple decoration and order
+def strong(f):
+    def wrapper():
+        return '<strong>' + f() + '</strong>'
+    return wrapper
+
+def emphasis(f):
+    def wrapper():
+        return '<em>' + f() + '</em>'
+    return wrapper
+
+@strong
+@emphasis
+def html_greet():
+    return 'Hello!'
+
+html_greet()
