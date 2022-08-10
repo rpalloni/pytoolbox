@@ -15,7 +15,7 @@ class DataSet:
     @cached_property
     def variance(self):
         return statistics.variance(self._data)
-    
+
 dataset = DataSet([1, 2, 3, 4, 5, 6])
 dataset.variance
 dataset.stdev
@@ -40,6 +40,7 @@ def get_pep(number: int) -> str:
 
 list_of_peps = [8, 290, 308, 320, 8, 218, 320, 279, 289, 320, 9991]
 
+# run twice
 for n in list_of_peps:
     pep = get_pep(n)
     print(n, len(pep))
@@ -63,14 +64,14 @@ class Pythonista:
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Pythonista):
             return NotImplemented
-        return ((self.lastname.lower(), self.firstname.lower()) ==
-                (other.lastname.lower(), other.firstname.lower()))
+        return ((self.lastname.lower(), self.firstname.lower())
+                == (other.lastname.lower(), other.firstname.lower()))
 
     def __lt__(self, other: object):
         if not isinstance(other, Pythonista):
             return NotImplemented
-        return ((self.lastname.lower(), self.firstname.lower()) <
-                (other.lastname.lower(), other.firstname.lower()))
+        return ((self.lastname.lower(), self.firstname.lower())
+                < (other.lastname.lower(), other.firstname.lower()))
 
 guido = Pythonista('Guido', 'van Rossum')
 brett = Pythonista('Brett', 'Cannon')
@@ -87,7 +88,7 @@ def euclidean_distance(point1: [int, int], point2: [int, int]) -> float:
     x2, y2 = point2
     return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
-euclidean_distance((2,2),(4,4))
+euclidean_distance((2, 2), (4, 4))
 
 zero_euclid = partial(euclidean_distance, (0, 0)) # origin distance
 point = (1, 1)
@@ -198,6 +199,7 @@ print(add(5, 1))
 print(add.__doc__)
 print(add.__name__)
 
+from functools import wraps
 
 def show_args(f):
     @wraps(f)
@@ -206,6 +208,7 @@ def show_args(f):
         return f(*args, **kwargs)
     return wrapper
 
+@show_args
 def add(a: int, b: int) -> int:
     '''Add two numbers a and b and return the result'''
     return a + b

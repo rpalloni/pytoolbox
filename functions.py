@@ -1,3 +1,63 @@
+# functions are first-class objects: assigned, stored, passed as arg, returned as output
+def p(name):
+    print(name)
+
+r = p # assign to variable
+r('Foo')
+
+del p
+r('Foo') # uderlying link still working
+
+f_list = [r, str.capitalize, int.real] # store in data structure
+
+
+def sum_num(a, b):
+    print(a + b)
+
+def handler(f, x, y):
+    # higher-order function: accepts other functions as args
+    f(x, y)
+
+handler(sum_num, 4, 5)
+
+
+# nested functions
+def outer(x, y):
+    def inner(a, b):
+        return (a + b)
+    return inner(x, y)
+
+outer(3, 6) # outer defines and calls inner
+
+def external(x):
+    y = 20
+
+    def internal():
+        print(x + y)
+    internal()
+
+external(5)
+
+
+# closure
+def add(x, y):
+    # do_add is a closure as it can access the parent function params
+    def do_add():
+        print('Adding', x, y)
+        return x + y
+    return do_add
+
+
+def generate_power(number):
+    def nth_power(power):
+        return number ** power
+    return nth_power
+
+raise_two = generate_power(2) # generate_power returns a function
+raise_three = generate_power(3)
+
+raise_two(2)
+
 # any number of positional arguments
 # *args packs the positional arguments into a tuple
 def sum_many(*args):
@@ -43,49 +103,3 @@ cheeseshop('Limburger',
            shopkeeper='Michael Palin',
            client='John Cleese',
            sketch='Cheese Shop Sketch')
-
-# nested functions
-def outer(x, y):
-    def inner(a, b):
-        return (a + b)
-    print(inner(x, y))
-
-outer(3, 6)
-
-def external(x):
-    y = 20
-
-    def internal():
-        print(x + y)
-    internal()
-
-external(5)
-
-
-# closure
-def add(x, y):
-    # do_add is a closure
-    def do_add():
-        print('Adding', x, y)
-        return x + y
-    return do_add
-
-
-def generate_power(number):
-    def nth_power(power):
-        return number ** power
-    return nth_power
-
-raise_two = generate_power(2) # generate_power returns a function
-raise_three = generate_power(3)
-
-raise_two(2)
-
-# function as parameter of another function
-def sum_num(a, b):
-    print(a + b)
-
-def handler(f, x, y):
-    f(x, y)
-
-handler(sum_num, 4, 5)
