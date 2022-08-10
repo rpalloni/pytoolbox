@@ -1,4 +1,4 @@
-# unpacking operator
+# unpacking operators - https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
 a = [8, 2, 6, 5, 4]
 [*range(len(a))]
 
@@ -11,6 +11,11 @@ arr2 = range(0, 10, 2)
 
 arr2 = range(10, 0, -1)
 print(*arr2)
+
+values = {'a': 1, 'b': 2}
+[*values] # positional arguments
+{*values}
+{**values} # keywords arguments
 
 # slice [index] and range slice [start:stop:step] operators
 arr3 = [1, 2, 3, 4, 5, 6]
@@ -67,4 +72,4 @@ words = ['banana', 'pie', 'Washington', 'book']
 sorted(words, key=len)
 
 tups = [(1, 'd'), (2, 'b'), (4, 'c'), (3, 'c')]
-sorted(tups, key=lambda x:x[1])
+sorted(tups, key=lambda x: x[1])
