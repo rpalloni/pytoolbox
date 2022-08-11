@@ -179,9 +179,10 @@ print(neg.neg(5))
 print(neg.neg(True))
 print(neg.neg('Hello'))
 
-# update_wrapper()
-# wraps()
-# add decoration to wrapper to apply it to function
+
+# @wraps()
+# using decorators hides input function metadata (replaced with decorator metadata)
+# use wraps to copy over the metadata from function to decorator
 
 def show_args(f):
     '''docs decorator'''
@@ -196,7 +197,7 @@ def add(a: int, b: int) -> int:
     return a + b
 
 print(add(5, 1))
-print(add.__doc__)
+print(add.__doc__)  # missing metadata
 print(add.__name__)
 
 from functools import wraps
