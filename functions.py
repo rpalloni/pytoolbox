@@ -58,8 +58,18 @@ raise_three = generate_power(3)
 
 raise_two(2)
 
+# required and optional arguments: *args and **kwargs
+def foo(required, *args, **kwargs):
+    print(required)
+    if args:
+        print(args)
+    if kwargs:
+        print(kwargs)
+
 # any number of positional arguments
-# *args packs the positional arguments into a tuple
+# *args packs the positional arguments into a TUPLE
+foo('hello', 1, 2, 3)
+
 def sum_many(*args):
     '''sum any number of numbers'''
     s = 0
@@ -77,7 +87,9 @@ l1 = [1, 2, 3, 4, 5]
 sum_many(*l1) # unpacking
 
 # any number of keyword argument
-# **kwargs packs the keyword arguments into a dictionary
+# **kwargs packs the keyword arguments into a DICTIONARY
+foo('hello', key1='world', key2=999)
+
 def profile(**kwargs):
     '''print profile with any number of attributes'''
     for key, value in kwargs.items():
